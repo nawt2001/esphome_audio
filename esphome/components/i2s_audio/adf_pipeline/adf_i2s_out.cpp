@@ -85,6 +85,7 @@ void ADFElementI2SOut::on_settings_request(AudioPipelineSettingsRequest &request
   if ( !this->adf_i2s_stream_writer_ ){
     return;
   }
+  esph_log_d(TAG,"Requested number of channels: %d", request.number_of_channels);
 
   if (this->is_adjustable()){
     bool rate_bits_channels_updated = false;
